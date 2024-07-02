@@ -1,5 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/resource/styles/app_styles.dart';
+import 'package:ticket_app/base/widget/app_spaced_between.dart';
 import 'package:ticket_app/screens/home_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -37,8 +39,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: _onTapItem,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: AppStyles.primaryColor,
+        unselectedItemColor: AppStyles.disabledColor,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: const [
