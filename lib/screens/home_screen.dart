@@ -7,13 +7,14 @@ import 'package:ticket_app/base/utils/app_routes.dart';
 import 'package:ticket_app/base/widget/app_spaced_between.dart';
 import 'package:ticket_app/base/widget/hotel_view.dart';
 import 'package:ticket_app/base/widget/ticket_view.dart';
-import 'package:ticket_app/screens/all_tickets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController searchController = TextEditingController();
+
     return Scaffold(
       backgroundColor: AppStyles.backgroundColor,
       body: ListView(
@@ -50,27 +51,17 @@ class HomeScreen extends StatelessWidget {
                   height: 15,
                 ),
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
                       color: Colors.white),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Icon(
-                        FluentSystemIcons.ic_fluent_search_regular,
-                        color: AppStyles.primaryColor,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        "Search",
-                        style: TextStyle(
-                            color: AppStyles.disabledColor, fontSize: 18),
-                      )
-                    ],
+                  child: TextField(
+                    controller: searchController,
+                    decoration: const InputDecoration(
+                        labelText: "Search",
+                        isDense: true,
+                        border: InputBorder.none,
+                        prefixIcon:
+                            Icon(FluentSystemIcons.ic_fluent_search_regular)),
                   ),
                 )
               ],
@@ -118,7 +109,7 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: 330,
                 child: ListView.separated(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext builder, int index) =>
                         HotelView(hotel: hotelList[index]),

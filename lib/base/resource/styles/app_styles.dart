@@ -25,4 +25,6 @@ class AppStyles {
   );
   static TextStyle headline3 =
       const TextStyle(fontSize: 20, fontWeight: FontWeight.w400);
+  static TextStyle buttonText = const TextStyle(
+      fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white);
 }

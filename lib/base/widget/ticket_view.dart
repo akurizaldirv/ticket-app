@@ -1,9 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:ticket_app/base/resource/media/app_media.dart';
 import 'package:ticket_app/base/resource/styles/app_styles.dart';
 import 'package:ticket_app/base/widget/app_layout_builder.dart';
-import 'package:ticket_app/base/widget/big_dot.dart';
 import 'package:ticket_app/base/widget/half_dot.dart';
 
 class TicketView extends StatelessWidget {

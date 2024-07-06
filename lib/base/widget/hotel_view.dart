@@ -1,6 +1,5 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:ticket_app/base/resource/media/app_media.dart';
 import 'package:ticket_app/base/resource/styles/app_styles.dart';
 
 class HotelView extends StatefulWidget {
@@ -75,9 +74,13 @@ class _HotelViewState extends State<HotelView> {
                   alignment: Alignment.topRight,
                   padding: const EdgeInsets.all(5),
                   child: IconButton(
-                    icon: Icon(_isBookmarked
-                        ? FluentSystemIcons.ic_fluent_bookmark_filled
-                        : FluentSystemIcons.ic_fluent_bookmark_regular, color: Colors.white, size: 36,),
+                    icon: Icon(
+                      _isBookmarked
+                          ? FluentSystemIcons.ic_fluent_bookmark_filled
+                          : FluentSystemIcons.ic_fluent_bookmark_regular,
+                      color: Colors.white,
+                      size: 36,
+                    ),
                     onPressed: () => setIsBookmarked(),
                   ),
                 ),
@@ -144,12 +147,9 @@ class _HotelViewState extends State<HotelView> {
                           child: Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10)),
-                            child: const Text(
+                            child: Text(
                               "Book Now",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white),
+                              style: AppStyles.buttonText,
                             ),
                           ))
                     ],
