@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/bottom_nav_bar.dart';
 import 'package:ticket_app/base/resource/media/app_media.dart';
 import 'package:ticket_app/base/resource/styles/app_styles.dart';
 import 'package:ticket_app/base/utils/all_json.dart';
@@ -14,6 +15,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController searchController = TextEditingController();
+    var filteredTicketList = ticketList.where((ticket) => !ticket["isDone"]).toList();
 
     return Scaffold(
       backgroundColor: AppStyles.backgroundColor,
@@ -74,8 +76,12 @@ class HomeScreen extends StatelessWidget {
                 child: AppSpacedBetween(
                     title: "Upcoming Flights",
                     tag: "View All",
-                    onTap: () =>
-                        Navigator.pushNamed(context, AppRoutes.allTickets)),
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BottomNavBar(
+                                  selectedIndex: 2,
+                                )))),
               ),
               SizedBox(
                 height: 190,
@@ -85,9 +91,9 @@ class HomeScreen extends StatelessWidget {
                       const SizedBox(
                     width: 10,
                   ),
-                  itemCount: ticketList.length < 5 ? ticketList.length : 5,
+                  itemCount: filteredTicketList.length < 5 ? filteredTicketList.length : 5,
                   itemBuilder: (BuildContext context, int index) {
-                    final ticket = ticketList[index];
+                    final ticket = filteredTicketList[index];
 
                     return TicketView(ticket: ticket);
                   },
