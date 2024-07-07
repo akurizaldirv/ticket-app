@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:ticket_app/base/resource/styles/app_styles.dart';
 import 'package:ticket_app/screens/all_tickets.dart';
 import 'package:ticket_app/screens/home_screen.dart';
+import 'package:ticket_app/screens/profile_screen.dart';
 import 'package:ticket_app/screens/search_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -19,7 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     HomeScreen(),
     SearchScreen(),
     AllTickets(),
-    Text("Profile"),
+    ProfileScreen(),
   ];
   late int _selectedIndex;
 
