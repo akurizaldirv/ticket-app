@@ -1,16 +1,5 @@
-# ticket_app
+# Ticketing App
 
-A new Flutter project.
+## Overview
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The Ticketing App is designed to streamline the process of ticket management and booking. It leverages Flutter's capabilities to deliver a responsive and visually appealing user interface. The app provides a clean and intuitive interface for users to view, manage, and book tickets.
